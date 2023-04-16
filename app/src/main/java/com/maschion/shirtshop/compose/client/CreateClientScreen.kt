@@ -1,5 +1,6 @@
 package com.maschion.shirtshop.compose.client
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,37 +14,53 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun CreateClient() {
-
     Column(
         modifier = Modifier.padding(20.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        val context = LocalContext.current
+
         var clientName by remember {
-            mutableStateOf(TextFieldValue())
+            mutableStateOf("")
+        }
+        var clientNameError by remember {
+            mutableStateOf(false)
         }
         var clientPhone by remember {
-            mutableStateOf(TextFieldValue())
+            mutableStateOf("")
+        }
+        var clientPhoneError by remember {
+            mutableStateOf(false)
         }
         var clientEmail by remember {
-            mutableStateOf(TextFieldValue())
+            mutableStateOf("")
         }
         var clientBirthday by remember {
-            mutableStateOf(TextFieldValue())
+            mutableStateOf("")
         }
         var clientFabric by remember {
-            mutableStateOf(TextFieldValue())
+            mutableStateOf("")
         }
+        var hasError by remember {
+            mutableStateOf(false)
+        }
+
 
         OutlinedTextField(
             value = clientName,
-            onValueChange = { clientName = it },
+            isError = clientNameError,
+            onValueChange = {
+                clientName = it
+                clientNameError = clientName.isEmpty()
+                hasError = clientNameError
+            },
             label = { Text("Nome") },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text
@@ -54,7 +71,11 @@ fun CreateClient() {
 
         OutlinedTextField(
             value = clientPhone,
-            onValueChange = { clientPhone = it },
+            onValueChange = {
+                clientPhone = it
+                clientPhoneError = clientPhone.isEmpty()
+                hasError = clientPhoneError
+                            },
             label = { Text("Telefone") },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text
@@ -88,17 +109,25 @@ fun CreateClient() {
         OutlinedTextField(
             value = clientFabric,
             onValueChange = { clientFabric = it },
-            label = { Text("Tecidos:") },
+            label = {
+                Text("Tecidos")
+            },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text
-            )
+            ),
+            modifier = Modifier.height(150.dp),
         )
 
-        Spacer(modifier = Modifier.height(200.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
-                onClick = {},
+                enabled = !hasError,
+                onClick = {
+                    if (!hasError) {
+                        Toast.makeText(context, "ok", Toast.LENGTH_LONG).show()
+                    }
+                },
                 shape = RoundedCornerShape(50.dp),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -108,4 +137,5 @@ fun CreateClient() {
             }
         }
     }
+
 }
