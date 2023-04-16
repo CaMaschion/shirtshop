@@ -1,11 +1,9 @@
 package com.maschion.shirtshop.compose.client
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -31,14 +29,6 @@ fun CreateClient() {
                 IconButton(onClick = { /*TODO*/ }) {
                     Icon(imageVector = Icons.Filled.Person,
                         contentDescription = "Person icon"
-                    )
-                }
-            },
-            trailingIcon = {
-                IconButton(onClick = { Log.d("Clicado", "Clicado")
-                }) {
-                    Icon(imageVector = Icons.Filled.Check,
-                        contentDescription = "Check icon"
                     )
                 }
             },
