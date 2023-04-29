@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.client
+package com.maschion.shirtshop.compose.addclient
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
