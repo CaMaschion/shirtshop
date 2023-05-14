@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.homeordershirt
+package com.maschion.shirtshop.compose.hometabscreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,13 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.runtime.*
-import com.maschion.shirtshop.compose.shirtdetails.DetailsScreen
-import com.maschion.shirtshop.compose.shirtmeasure.MeasureScreen
-import com.maschion.shirtshop.compose.shirtsummary.SummaryScreen
-import com.maschion.shirtshop.viewmodels.HomeOrderViewModel
+import com.maschion.shirtshop.compose.hometabscreen.tabs.DetailsTabScreen
+import com.maschion.shirtshop.compose.shirtmeasure.MeasureTabScreen
+import com.maschion.shirtshop.compose.shirtsummary.SummaryTabScreen
 
 @Composable
-fun HomeOrderScreen(viewModel: HomeOrderViewModel) {
+fun TabScreen(viewModel: TabScreenViewModel) {
     var tabIndex by remember { mutableStateOf(0) }
 
     Column(modifier = Modifier.fillMaxWidth()) {
@@ -28,9 +27,9 @@ fun HomeOrderScreen(viewModel: HomeOrderViewModel) {
             }
         }
         when (tabIndex) {
-            0 -> MeasureScreen(viewModel = viewModel)
-            1 -> DetailsScreen(viewModel = viewModel)
-            2 -> SummaryScreen(viewModel = viewModel)
+            0 -> MeasureTabScreen(viewModel = viewModel)
+            1 -> DetailsTabScreen(viewModel = viewModel)
+            2 -> SummaryTabScreen(viewModel = viewModel)
         }
     }
 }

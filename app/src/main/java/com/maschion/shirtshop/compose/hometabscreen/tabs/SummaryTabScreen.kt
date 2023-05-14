@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.shirtdetails
+package com.maschion.shirtshop.compose.shirtsummary
 
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
@@ -9,17 +9,19 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import com.maschion.shirtshop.viewmodels.HomeOrderViewModel
+import com.maschion.shirtshop.compose.hometabscreen.TabScreenViewModel
 
 @Composable
-fun DetailsScreen(viewModel: HomeOrderViewModel) {
+fun SummaryTabScreen(viewModel: TabScreenViewModel) {
 
     var isSwipeToTheLeft by remember { mutableStateOf(false) }
     val dragState = rememberDraggableState(onDelta = { delta ->
@@ -37,7 +39,7 @@ fun DetailsScreen(viewModel: HomeOrderViewModel) {
         verticalArrangement = Arrangement.Center) {
         Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
             Text(
-                text = "Detalhes",
+                text = "Resumo",
                 textAlign = TextAlign.Center,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
