@@ -1,5 +1,6 @@
 package com.maschion.shirtshop
 
+import android.app.Application
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,8 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.maschion.shirtshop.compose.addclient.CreateClient
+import com.maschion.shirtshop.compose.homeordershirt.HomeOrderScreen
 import com.maschion.shirtshop.compose.login.Login
 import com.maschion.shirtshop.ui.theme.ShirtshopTheme
+import com.maschion.shirtshop.viewmodels.HomeOrderViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Login()
+                    HomeOrderScreen(viewModel = HomeOrderViewModel(application = Application()))
                 }
             }
         }

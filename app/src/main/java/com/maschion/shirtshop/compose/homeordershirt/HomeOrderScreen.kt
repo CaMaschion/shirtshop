@@ -8,21 +8,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
-import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import com.maschion.shirtshop.compose.shirtdetails.DetailsScreen
 import com.maschion.shirtshop.compose.shirtmeasure.MeasureScreen
 import com.maschion.shirtshop.compose.shirtsummary.SummaryScreen
+import com.maschion.shirtshop.viewmodels.HomeOrderViewModel
 
 @Composable
-fun OrderScreen() {
+fun HomeOrderScreen(viewModel: HomeOrderViewModel) {
     var tabIndex by remember { mutableStateOf(0) }
 
     val tabs = listOf("Medidas", "Detalhes", "Resumo")
 
     Column(modifier = Modifier.fillMaxWidth()) {
         ScrollableTabRow(selectedTabIndex = tabIndex) {
-            tabs.forEachIndexed { index, title ->
+            viewModel.tabs.forEachIndexed { index, title ->
                 Tab(text = { Text(title) },
                     selected = tabIndex == index,
                     onClick = { tabIndex = index }
@@ -30,9 +30,9 @@ fun OrderScreen() {
             }
         }
         when (tabIndex) {
-            0 -> DetailsScreen()
-            1 -> MeasureScreen()
-            2 -> SummaryScreen()
+            0 -> DetailsScreen(viewModel = viewModel)
+            1 -> MeasureScreen(viewModel = viewModel)
+            2 -> SummaryScreen(viewModel = viewModel)
         }
     }
 }
