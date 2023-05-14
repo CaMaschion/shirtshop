@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">shirtshop</string>
+    <string name="measure">Medidas\n</string>
+    <string name="details">Detalhes</string>
+    <string name="summary">Resumo</string>
 </resources>
