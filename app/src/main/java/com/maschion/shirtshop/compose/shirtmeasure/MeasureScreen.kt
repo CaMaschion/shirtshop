@@ -39,7 +39,7 @@ fun MeasureScreen(viewModel: HomeOrderViewModel) {
         verticalArrangement = Arrangement.Center) {
         Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
             Text(
-                text = "About",
+                text = "Medidas",
                 textAlign = TextAlign.Center,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold

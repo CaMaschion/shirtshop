@@ -18,8 +18,6 @@ import com.maschion.shirtshop.viewmodels.HomeOrderViewModel
 fun HomeOrderScreen(viewModel: HomeOrderViewModel) {
     var tabIndex by remember { mutableStateOf(0) }
 
-    val tabs = listOf("Medidas", "Detalhes", "Resumo")
-
     Column(modifier = Modifier.fillMaxWidth()) {
         ScrollableTabRow(selectedTabIndex = tabIndex) {
             viewModel.tabs.forEachIndexed { index, title ->
@@ -30,8 +28,8 @@ fun HomeOrderScreen(viewModel: HomeOrderViewModel) {
             }
         }
         when (tabIndex) {
-            0 -> DetailsScreen(viewModel = viewModel)
-            1 -> MeasureScreen(viewModel = viewModel)
+            0 -> MeasureScreen(viewModel = viewModel)
+            1 -> DetailsScreen(viewModel = viewModel)
             2 -> SummaryScreen(viewModel = viewModel)
         }
     }
