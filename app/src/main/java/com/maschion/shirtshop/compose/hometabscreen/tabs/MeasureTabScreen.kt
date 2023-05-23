@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.shirtmeasure
+package com.maschion.shirtshop.compose.hometabscreen.tabs
 
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
@@ -18,10 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import com.maschion.shirtshop.compose.hometabscreen.TabScreenViewModel
-
 @Composable
-fun MeasureTabScreen(viewModel: TabScreenViewModel) {
+fun MeasureTabScreen(viewModel: MeasureViewModel) {
 
     var isSwipeToTheLeft by remember { mutableStateOf(false) }
     val dragState = rememberDraggableState(onDelta = { delta ->
@@ -32,14 +30,12 @@ fun MeasureTabScreen(viewModel: TabScreenViewModel) {
         state = dragState,
         orientation = Orientation.Horizontal,
         onDragStarted = {  },
-        onDragStopped = {
-            viewModel.updateTabIndexBasedOnSwipe(isSwipeToTheLeft = isSwipeToTheLeft)
-        }),
+        onDragStopped = { viewModel.updateTabIndex(isSwipeToTheLeft = isSwipeToTheLeft) }),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center) {
         Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
             Text(
-                text = "Medidas",
+                text = viewModel.uiState.titleLabel,
                 textAlign = TextAlign.Center,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold

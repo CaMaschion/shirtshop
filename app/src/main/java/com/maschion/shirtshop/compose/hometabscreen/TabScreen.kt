@@ -10,8 +10,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.runtime.*
 import com.maschion.shirtshop.compose.hometabscreen.tabs.DetailsTabScreen
-import com.maschion.shirtshop.compose.shirtmeasure.MeasureTabScreen
-import com.maschion.shirtshop.compose.shirtsummary.SummaryTabScreen
+import com.maschion.shirtshop.compose.hometabscreen.tabs.MeasureTabScreen
+import com.maschion.shirtshop.compose.hometabscreen.tabs.SummaryTabScreen
 
 @Composable
 fun TabScreen(viewModel: TabScreenViewModel) {
@@ -27,9 +27,9 @@ fun TabScreen(viewModel: TabScreenViewModel) {
             }
         }
         when (tabIndex) {
-            0 -> MeasureTabScreen(viewModel = viewModel)
-            1 -> DetailsTabScreen(viewModel = viewModel)
-            2 -> SummaryTabScreen(viewModel = viewModel)
+            0 -> MeasureTabScreen(viewModel = viewModel.measureViewModel)
+            1 -> DetailsTabScreen(viewModel = viewModel.detailsViewModel)
+            2 -> SummaryTabScreen(viewModel = viewModel.summaryViewModel)
         }
     }
 }
