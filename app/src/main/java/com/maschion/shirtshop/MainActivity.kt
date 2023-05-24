@@ -1,6 +1,5 @@
 package com.maschion.shirtshop
 
-import android.app.Application
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TabScreen(viewModel = TabScreenViewModel(application = Application()))
+                    TabScreen(viewModel = TabScreenViewModel())
                 }
             }
         }

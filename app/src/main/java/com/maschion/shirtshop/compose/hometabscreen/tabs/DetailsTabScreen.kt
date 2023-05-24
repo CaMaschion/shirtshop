@@ -16,10 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import com.maschion.shirtshop.compose.hometabscreen.TabScreenViewModel
-
 @Composable
-fun DetailsTabScreen(viewModel: TabScreenViewModel) {
+fun DetailsTabScreen(viewModel: DetailsViewModel) {
 
     var isSwipeToTheLeft by remember { mutableStateOf(false) }
     val dragState = rememberDraggableState(onDelta = { delta ->
@@ -30,14 +28,12 @@ fun DetailsTabScreen(viewModel: TabScreenViewModel) {
         state = dragState,
         orientation = Orientation.Horizontal,
         onDragStarted = {  },
-        onDragStopped = {
-            viewModel.updateTabIndexBasedOnSwipe(isSwipeToTheLeft = isSwipeToTheLeft)
-        }),
+        onDragStopped = { viewModel.updateTabIndex(isSwipeToTheLeft = isSwipeToTheLeft) }),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center) {
         Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
             Text(
-                text = "Detalhes",
+                text = viewModel.uiState.titleLabel,
                 textAlign = TextAlign.Center,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
