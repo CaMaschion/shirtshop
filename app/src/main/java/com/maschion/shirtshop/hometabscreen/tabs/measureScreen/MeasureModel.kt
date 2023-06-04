@@ -1,8 +1,8 @@
-package com.maschion.shirtshop.compose.hometabscreen.tabs
+package com.maschion.shirtshop.hometabscreen.tabs.measureScreen
 
 import com.maschion.shirtshop.utils.UIState
 
-data class SummaryModel (
+data class MeasureModel (
     val state: UIState,
     val titleLabel: String
 )

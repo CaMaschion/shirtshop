@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.hometabscreen.tabs
+package com.maschion.shirtshop.hometabscreen.tabs.detailsScreen
 
 import com.maschion.shirtshop.utils.UIState
 

@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.hometabscreen.tabs
+package com.maschion.shirtshop.hometabscreen.tabs.measureScreen
 
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable

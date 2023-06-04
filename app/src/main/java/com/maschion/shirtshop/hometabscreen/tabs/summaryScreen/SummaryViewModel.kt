@@ -1,10 +1,10 @@
-package com.maschion.shirtshop.compose.hometabscreen.tabs
+package com.maschion.shirtshop.hometabscreen.tabs.summaryScreen
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.maschion.shirtshop.compose.hometabscreen.TabScreenViewModel
+import com.maschion.shirtshop.hometabscreen.TabScreenViewModel
 import com.maschion.shirtshop.utils.UIState
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.hometabscreen
+package com.maschion.shirtshop.hometabscreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,9 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.runtime.*
-import com.maschion.shirtshop.compose.hometabscreen.tabs.DetailsTabScreen
-import com.maschion.shirtshop.compose.hometabscreen.tabs.MeasureTabScreen
-import com.maschion.shirtshop.compose.hometabscreen.tabs.SummaryTabScreen
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.maschion.shirtshop.hometabscreen.tabs.detailsScreen.DetailsTabScreen
+import com.maschion.shirtshop.hometabscreen.tabs.measureScreen.MeasureTabScreen
+import com.maschion.shirtshop.hometabscreen.tabs.summaryScreen.SummaryTabScreen
+import com.maschion.shirtshop.login.LoginScreen
 
 @Composable
 fun TabScreen(viewModel: TabScreenViewModel) {
@@ -32,4 +35,10 @@ fun TabScreen(viewModel: TabScreenViewModel) {
             2 -> SummaryTabScreen(viewModel = viewModel.summaryViewModel)
         }
     }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun TabScreenPreview(){
+    TabScreen(viewModel())
 }

@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.hometabscreen.tabs
+package com.maschion.shirtshop.hometabscreen.tabs.detailsScreen
 
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
@@ -15,7 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.maschion.shirtshop.login.LoginScreen
+
 @Composable
 fun DetailsTabScreen(viewModel: DetailsViewModel) {
 
@@ -24,13 +28,17 @@ fun DetailsTabScreen(viewModel: DetailsViewModel) {
         isSwipeToTheLeft = delta > 0
     })
 
-    Column(modifier = Modifier.fillMaxSize().draggable(
-        state = dragState,
-        orientation = Orientation.Horizontal,
-        onDragStarted = {  },
-        onDragStopped = { viewModel.updateTabIndex(isSwipeToTheLeft = isSwipeToTheLeft) }),
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .draggable(
+                state = dragState,
+                orientation = Orientation.Horizontal,
+                onDragStarted = { },
+                onDragStopped = { viewModel.updateTabIndex(isSwipeToTheLeft = isSwipeToTheLeft) }),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center) {
+        verticalArrangement = Arrangement.Center
+    ) {
         Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
             Text(
                 text = viewModel.uiState.titleLabel,
@@ -43,6 +51,7 @@ fun DetailsTabScreen(viewModel: DetailsViewModel) {
 }
 
 @Composable
-fun DetailsShirtScreen(){
-
+@Preview(showBackground = true)
+fun DetailsScreenPreview() {
+    DetailsTabScreen(viewModel())
 }

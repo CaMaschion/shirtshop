@@ -1,6 +1,7 @@
-package com.maschion.shirtshop.compose.login
+package com.maschion.shirtshop.login
 
 import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,16 +23,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.maschion.shirtshop.ShirtshopDestinations
 
 @Composable
-fun Login() {
+fun LoginScreen(
+    navController: NavController
+) {
     Column(
         modifier = Modifier.padding(20.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         val context = LocalContext.current
 
         var email by remember {
@@ -85,6 +92,9 @@ fun Login() {
             Button(
                 enabled = !hasError,
                 onClick = {
+
+                    navController.navigate(route = ShirtshopDestinations.Tab.route)
+
                     if (!hasError) {
                         Toast.makeText(context, "ok", Toast.LENGTH_LONG).show()
                     }
@@ -118,4 +128,10 @@ fun Login() {
         }
     }
 
+}
+
+@Composable
+@Preview(showBackground = true)
+fun LoginScreenPreview() {
+    LoginScreen(navController = rememberNavController())
 }

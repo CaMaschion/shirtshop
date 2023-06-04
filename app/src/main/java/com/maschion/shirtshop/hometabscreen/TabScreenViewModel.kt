@@ -1,10 +1,10 @@
-package com.maschion.shirtshop.compose.hometabscreen
+package com.maschion.shirtshop.hometabscreen
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.maschion.shirtshop.compose.hometabscreen.tabs.DetailsViewModel
-import com.maschion.shirtshop.compose.hometabscreen.tabs.MeasureViewModel
-import com.maschion.shirtshop.compose.hometabscreen.tabs.SummaryViewModel
+import com.maschion.shirtshop.hometabscreen.tabs.detailsScreen.DetailsViewModel
+import com.maschion.shirtshop.hometabscreen.tabs.measureScreen.MeasureViewModel
+import com.maschion.shirtshop.hometabscreen.tabs.summaryScreen.SummaryViewModel
 
 class TabScreenViewModel : ViewModel() {
 
