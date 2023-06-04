@@ -11,13 +11,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.maschion.shirtshop.hometabscreen.tabs.detailsScreen.DetailsTabScreen
 import com.maschion.shirtshop.hometabscreen.tabs.measureScreen.MeasureTabScreen
 import com.maschion.shirtshop.hometabscreen.tabs.summaryScreen.SummaryTabScreen
 import com.maschion.shirtshop.login.LoginScreen
 
 @Composable
-fun TabScreen(viewModel: TabScreenViewModel) {
+fun TabScreen(
+    viewModel: TabScreenViewModel) {
     var tabIndex by remember { mutableStateOf(0) }
 
     Column(modifier = Modifier.fillMaxWidth()) {
@@ -40,5 +43,5 @@ fun TabScreen(viewModel: TabScreenViewModel) {
 @Composable
 @Preview(showBackground = true)
 fun TabScreenPreview(){
-    TabScreen(viewModel())
+    TabScreen( viewModel())
 }
