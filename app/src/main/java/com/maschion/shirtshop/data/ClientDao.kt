@@ -33,6 +33,4 @@ interface ClientDao {
     @Query("SELECT * FROM client_table WHERE name LIKE :searchQuery")
     fun searchDatabase(searchQuery: String): Flow<List<Client>>
 
-
-
 }
