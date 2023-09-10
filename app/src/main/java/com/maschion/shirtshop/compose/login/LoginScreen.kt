@@ -25,7 +25,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Login() {
+fun LoginScreen() {
     Column(
         modifier = Modifier.padding(20.dp),
         verticalArrangement = Arrangement.Center,

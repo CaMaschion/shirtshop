@@ -13,6 +13,7 @@ import com.maschion.shirtshop.compose.addclient.CreateClient
 import com.maschion.shirtshop.compose.hometabscreen.TabScreen
 import com.maschion.shirtshop.ui.theme.ShirtshopTheme
 import com.maschion.shirtshop.compose.hometabscreen.TabScreenViewModel
+import com.maschion.shirtshop.compose.login.LoginScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TabScreen(viewModel = TabScreenViewModel())
+                    //TabScreen(viewModel = TabScreenViewModel())
+                    LoginScreen()
                 }
             }
         }
