@@ -10,11 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.maschion.shirtshop.compose.addclient.CreateClient
-import com.maschion.shirtshop.compose.hometabscreen.TabScreen
 import com.maschion.shirtshop.ui.theme.ShirtshopTheme
-import com.maschion.shirtshop.compose.hometabscreen.TabScreenViewModel
 import com.maschion.shirtshop.compose.login.LoginScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
