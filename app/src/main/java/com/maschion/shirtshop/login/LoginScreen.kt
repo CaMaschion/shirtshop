@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.login
+package com.maschion.shirtshop.login
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement

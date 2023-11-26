@@ -9,9 +9,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.maschion.shirtshop.compose.addclient.CreateClient
+import com.maschion.shirtshop.registerclient.CreateClient
 import com.maschion.shirtshop.ui.theme.ShirtshopTheme
-import com.maschion.shirtshop.compose.login.LoginScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //TabScreen(viewModel = TabScreenViewModel())
-                    LoginScreen()
+                    CreateClient()
                 }
             }
         }
