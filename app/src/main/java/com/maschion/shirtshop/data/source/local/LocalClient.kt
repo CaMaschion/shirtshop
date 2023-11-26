@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.data.client
+package com.maschion.shirtshop.data.source.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -6,7 +6,7 @@ import com.maschion.shirtshop.utils.Constants.DATABASE_TABLE
 import java.util.Date
 
 @Entity(tableName = DATABASE_TABLE)
-data class Client(
+data class LocalClient(
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0,
     var name: String,

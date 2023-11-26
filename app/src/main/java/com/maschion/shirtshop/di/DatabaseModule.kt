@@ -2,7 +2,7 @@ package com.maschion.shirtshop.di
 
 import android.content.Context
 import androidx.room.Room
-import com.maschion.shirtshop.data.client.ClientDatabase
+import com.maschion.shirtshop.data.source.local.ClientDatabase
 import com.maschion.shirtshop.utils.Constants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
@@ -14,6 +14,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
+
+    @Singleton
     @Provides
     fun provideDatabase(
         @ApplicationContext context: Context
@@ -23,6 +25,7 @@ object DatabaseModule {
         DATABASE_NAME
     ).build()
 
+    @Singleton
     @Provides
     fun provideDao(
         database: ClientDatabase

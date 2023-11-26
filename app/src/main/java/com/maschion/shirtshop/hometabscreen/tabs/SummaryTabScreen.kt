@@ -1,4 +1,4 @@
-package com.maschion.shirtshop.compose.hometabscreen.tabs
+package com.maschion.shirtshop.hometabscreen.tabs
 
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 @Composable
-fun MeasureTabScreen(viewModel: MeasureViewModel) {
+fun SummaryTabScreen(viewModel: SummaryViewModel) {
 
     var isSwipeToTheLeft by remember { mutableStateOf(false) }
     val dragState = rememberDraggableState(onDelta = { delta ->
